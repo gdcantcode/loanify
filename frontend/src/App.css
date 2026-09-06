@@ -1,0 +1,185 @@
+:root {
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  --color-bg: #F6F5F1;
+  --color-card: #FFFFFF;
+  --color-ink: #16241F;
+  --color-ink-muted: #5C6B63;
+  --color-primary: #1F4B3F;
+  --color-primary-hover: #16362D;
+  --color-approved: #B98B2A;
+  --color-rejected: #B3402F;
+  --color-border: #DADED9;
+
+  --font-heading: "Lora", serif;
+  --font-body: "Inter", system-ui, sans-serif;
+
+  --radius: 8px;
+  --spacing: 1rem;
+}
+
+.toggle-btn {
+  width: 100%;
+  padding: 0.6rem;
+  margin-top: 1rem;
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  color: var(--color-ink-muted);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.toggle-btn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.field input.invalid,
+.field select.invalid {
+  border-color: var(--color-rejected);
+}
+
+.field-error {
+  font-size: 0.8rem;
+  color: var(--color-rejected);
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 3rem 1.5rem;
+}
+
+.card {
+  width: 100%;
+  max-width: 640px;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: 0 1px 3px rgba(22, 36, 31, 0.06), 0 8px 24px rgba(22, 36, 31, 0.05);
+  padding: 2.5rem;
+}
+
+header h1 {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  margin: 0 0 0.4rem;
+  color: var(--color-ink);
+}
+
+.subtitle {
+  margin: 0 0 2rem;
+  color: var(--color-ink-muted);
+  font-size: 0.95rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 1.75rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.field label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-ink-muted);
+}
+
+.field input,
+.field select {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  background: var(--color-bg);
+  color: var(--color-ink);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.field input:focus,
+.field select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(31, 75, 63, 0.15);
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 0.85rem;
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.submit-btn:hover {
+  background: var(--color-primary-hover);
+}
+
+.submit-btn:active {
+  transform: scale(0.99);
+}
+
+.result-banner {
+  margin-top: 1.5rem;
+  padding: 0.9rem 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.result-banner.approved {
+  background: rgba(185, 139, 42, 0.12);
+  border: 1px solid var(--color-approved);
+  color: #7A5C1E;
+}
+
+.result-banner.rejected,
+.result-banner.error {
+  background: rgba(179, 64, 47, 0.1);
+  border: 1px solid var(--color-rejected);
+  color: var(--color-rejected);
+}
+
+.importance-section {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.importance-section h2 {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  margin: 0 0 0.4rem;
+}
+
+.explanation-section h2,
+.importance-section h2 {
+  color: var(--color-ink);
+}
