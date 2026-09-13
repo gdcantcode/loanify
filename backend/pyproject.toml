@@ -1,3 +1,4 @@
+[project]
 name = "loanify-backend"
 version = "0.1.0"
 description = "Loan approval prediction API"
@@ -10,3 +11,6 @@ dependencies = [
     "scikit-learn",
     "shap",
 ]
+
+[tool.fastapi-cli]
+app = "main:app"
